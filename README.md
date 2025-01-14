@@ -2,8 +2,8 @@
 # Alice <img src="https://raw.githubusercontent.com/hautvfami/flutter-alice/main/media/logo.png" width="25px">
 
 [![pub package](https://img.shields.io/pub/v/flutter_alice_plus.svg)](https://pub.dev/packages/flutter_alice_plus)
-[![pub package](https://img.shields.io/github/license/hautvfami/flutter-alice.svg?style=flat)](https://github.com/hautvfami/flutter-alice)
-[![pub package](https://img.shields.io/badge/platform-flutter-blue.svg)](https://github.com/hautvfami/flutter-alice)
+[![pub package](https://img.shields.io/github/license/hautvfami/flutter-alice.svg?style=flat)](https://github.com/masreplay/flutter_alice_plus)
+[![pub package](https://img.shields.io/badge/platform-flutter-blue.svg)](https://github.com/masreplay/flutter_alice_plus)
 
 Alice is an HTTP Inspector tool for Flutter which helps debugging http requests. 
 It catches and stores http requests and responses, which can be viewed via simple UI. 
