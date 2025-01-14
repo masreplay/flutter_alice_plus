@@ -1,5 +1,5 @@
-## 1.1.2
-* Update packages support flutter "flutter": "3.24.3"
+## 1.2.0
+* Update packages and support flutter version `3.24.3`
 
 ## 1.1.1
 * Upgrade overlay_support: ^2.1.0
