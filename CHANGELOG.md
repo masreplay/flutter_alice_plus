@@ -1,7 +1,5 @@
 ## 1.1.2
-* Upgrade overlay_support: ^2.1.0
-* Replaced deprecated DioError with DioException
-* Fixed minor lint error
+* Update packages support flutter "flutter": "3.24.3"
 
 ## 1.1.1
 * Upgrade overlay_support: ^2.1.0
