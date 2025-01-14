@@ -2,15 +2,14 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:chopper/chopper.dart' as chopper;
-import 'package:flutter_alice/model/alice_http_call.dart';
-import 'package:flutter_alice/model/alice_http_request.dart';
-import 'package:flutter_alice/model/alice_http_response.dart';
+import 'package:flutter_alice_plus/model/alice_http_call.dart';
+import 'package:flutter_alice_plus/model/alice_http_request.dart';
+import 'package:flutter_alice_plus/model/alice_http_response.dart';
 import 'package:http/http.dart';
 
 import 'alice_core.dart';
 
-class AliceChopperInterceptor
-    implements chopper.ResponseInterceptor, chopper.RequestInterceptor {
+class AliceChopperInterceptor implements chopper.Interceptor {
   /// AliceCore instance
   final AliceCore aliceCore;
 
@@ -35,9 +34,36 @@ class AliceChopperInterceptor
     return hashCodeSum.hashCode;
   }
 
-  /// Handles chopper request and creates alice http call
+  /// Handles chopper response and adds data to existing alice http call
+  FutureOr<chopper.Response> onResponse(chopper.Response response) {
+    var httpResponse = AliceHttpResponse();
+    httpResponse.status = response.statusCode;
+    if (response.body == null) {
+      httpResponse.body = "";
+      httpResponse.size = 0;
+    } else {
+      httpResponse.body = response.body;
+      httpResponse.size = utf8.encode(response.body.toString()).length;
+    }
+
+    httpResponse.time = DateTime.now();
+    Map<String, String> headers = Map();
+    response.headers.forEach((header, values) {
+      headers[header] = values.toString();
+    });
+    httpResponse.headers = headers;
+
+    aliceCore.addResponse(
+        httpResponse, getRequestHashCode(response.base.request!));
+    return response;
+  }
+
   @override
-  FutureOr<chopper.Request> onRequest(chopper.Request request) async {
+  Future<chopper.Response<BodyType>> intercept<BodyType>(
+    chopper.Chain<BodyType> chain,
+  ) async {
+    final request = chain.request;
+
     var baseRequest = await request.toBaseRequest();
     AliceHttpCall call = AliceHttpCall(getRequestHashCode(baseRequest));
     String endpoint = "";
@@ -91,30 +117,6 @@ class AliceChopperInterceptor
     call.response = AliceHttpResponse();
 
     aliceCore.addCall(call);
-    return request;
-  }
-
-  /// Handles chopper response and adds data to existing alice http call
-  FutureOr<chopper.Response> onResponse(chopper.Response response) {
-    var httpResponse = AliceHttpResponse();
-    httpResponse.status = response.statusCode;
-    if (response.body == null) {
-      httpResponse.body = "";
-      httpResponse.size = 0;
-    } else {
-      httpResponse.body = response.body;
-      httpResponse.size = utf8.encode(response.body.toString()).length;
-    }
-
-    httpResponse.time = DateTime.now();
-    Map<String, String> headers = Map();
-    response.headers.forEach((header, values) {
-      headers[header] = values.toString();
-    });
-    httpResponse.headers = headers;
-
-    aliceCore.addResponse(
-        httpResponse, getRequestHashCode(response.base.request!));
-    return response;
+    return chain.proceed(request);
   }
 }

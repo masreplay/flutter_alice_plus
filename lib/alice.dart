@@ -1,14 +1,13 @@
 import 'dart:io';
 
-import 'package:chopper/chopper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_alice/core/alice_chopper_response_interceptor.dart';
-import 'package:flutter_alice/core/alice_core.dart';
-import 'package:flutter_alice/core/alice_dio_interceptor.dart';
-import 'package:flutter_alice/core/alice_http_adapter.dart';
-import 'package:flutter_alice/core/alice_http_client_adapter.dart';
-import 'package:flutter_alice/model/alice_http_call.dart';
+import 'package:flutter_alice_plus/core/alice_chopper_response_interceptor.dart';
+import 'package:flutter_alice_plus/core/alice_core.dart';
+import 'package:flutter_alice_plus/core/alice_dio_interceptor.dart';
+import 'package:flutter_alice_plus/core/alice_http_adapter.dart';
+import 'package:flutter_alice_plus/core/alice_http_client_adapter.dart';
+import 'package:flutter_alice_plus/model/alice_http_call.dart';
 import 'package:http/http.dart' as http;
 
 class Alice {
@@ -89,7 +88,7 @@ class Alice {
   }
 
   /// Get chopper interceptor. This should be added to Chopper instance.
-  List<ResponseInterceptor> getChopperInterceptor() {
+  List<AliceChopperInterceptor> getChopperInterceptor() {
     return [AliceChopperInterceptor(_aliceCore)];
   }
 

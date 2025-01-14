@@ -1,9 +1,9 @@
 import 'dart:convert';
 
-import 'package:flutter_alice/core/alice_core.dart';
-import 'package:flutter_alice/model/alice_http_call.dart';
-import 'package:flutter_alice/model/alice_http_request.dart';
-import 'package:flutter_alice/model/alice_http_response.dart';
+import 'package:flutter_alice_plus/core/alice_core.dart';
+import 'package:flutter_alice_plus/model/alice_http_call.dart';
+import 'package:flutter_alice_plus/model/alice_http_request.dart';
+import 'package:flutter_alice_plus/model/alice_http_response.dart';
 import 'package:http/http.dart' as http;
 
 class AliceHttpAdapter {

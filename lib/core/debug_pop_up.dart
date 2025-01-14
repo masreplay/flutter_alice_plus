@@ -2,8 +2,8 @@ import 'dart:async';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_alice/model/alice_http_call.dart';
-import 'package:flutter_alice/ui/page/alice_stats_screen.dart';
+import 'package:flutter_alice_plus/model/alice_http_call.dart';
+import 'package:flutter_alice_plus/ui/page/alice_stats_screen.dart';
 
 import 'alice_core.dart';
 import 'expandable_fab.dart';

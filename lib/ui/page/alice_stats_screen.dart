@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_alice/core/alice_core.dart';
-import 'package:flutter_alice/helper/alice_conversion_helper.dart';
-import 'package:flutter_alice/model/alice_http_call.dart';
+import 'package:flutter_alice_plus/core/alice_core.dart';
+import 'package:flutter_alice_plus/helper/alice_conversion_helper.dart';
+import 'package:flutter_alice_plus/model/alice_http_call.dart';
 
 class AliceStatsScreen extends StatelessWidget {
   final AliceCore aliceCore;

@@ -4,9 +4,9 @@ import 'dart:io';
 import 'package:chopper/chopper.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_alice/alice.dart';
-import 'package:flutter_alice/core/alice_http_client_extensions.dart';
-import 'package:flutter_alice/core/alice_http_extensions.dart';
+import 'package:flutter_alice_plus/alice.dart';
+import 'package:flutter_alice_plus/core/alice_http_client_extensions.dart';
+import 'package:flutter_alice_plus/core/alice_http_extensions.dart';
 import 'package:http/http.dart' as http;
 import 'package:overlay_support/overlay_support.dart';
 

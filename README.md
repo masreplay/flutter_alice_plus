@@ -1,7 +1,7 @@
 
 # Alice <img src="https://raw.githubusercontent.com/hautvfami/flutter-alice/main/media/logo.png" width="25px">
 
-[![pub package](https://img.shields.io/pub/v/flutter_alice.svg)](https://pub.dev/packages/flutter_alice)
+[![pub package](https://img.shields.io/pub/v/flutter_alice_plus.svg)](https://pub.dev/packages/flutter_alice_plus)
 [![pub package](https://img.shields.io/github/license/hautvfami/flutter-alice.svg?style=flat)](https://github.com/hautvfami/flutter-alice)
 [![pub package](https://img.shields.io/badge/platform-flutter-blue.svg)](https://github.com/hautvfami/flutter-alice)
 
@@ -10,7 +10,7 @@ It catches and stores http requests and responses, which can be viewed via simpl
 It is inspired from Chuck (https://github.com/jgilfelt/chuck) and Chucker (https://github.com/ChuckerTeam/chucker).
 
 
-Overlay bubble version of Alice: https://github.com/jhomlala/alice
+Overlay bubble version of Alice: https://github.com/masreplay/alice
 
 <table>
   <tr>
@@ -79,7 +79,7 @@ Overlay bubble version of Alice: https://github.com/jhomlala/alice
 
 ```yaml
 dependencies:
-  flutter_alice: ^1.0.1
+  flutter_alice_plus: ^1.0.1
 ```
 
 2. Install it
@@ -91,7 +91,7 @@ $ flutter pub get
 3. Import it
 
 ```dart
-import 'package:flutter_alice/alice.dart';
+import 'package:flutter_alice_plus/alice.dart';
 ```
 
 ## Usage
@@ -177,8 +177,8 @@ You can use extensions to shorten your http and http client code. This is option
 Example:
 1. Import:
 ```dart
-import 'package:flutter_alice/core/alice_http_client_extensions.dart';
-import 'package:flutter_alice/core/alice_http_extensions.dart';
+import 'package:flutter_alice_plus/core/alice_http_client_extensions.dart';
+import 'package:flutter_alice_plus/core/alice_http_extensions.dart';
 ```
 
 2. Use extensions:

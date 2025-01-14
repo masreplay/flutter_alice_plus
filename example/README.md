@@ -1,4 +1,4 @@
-# alice_example
+# alice_plus_example
 
 Demonstrates how to use the alice plugin.
 
