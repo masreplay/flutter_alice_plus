@@ -9,6 +9,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  chopper: ^8.0.3
+  flutter_alice_plus: 
+    path: ../
+  dio: ^5.7.0
+  http: ^1.2.2
+  overlay_support: ^2.1.0
 
 dev_dependencies:
   flutter_test:
